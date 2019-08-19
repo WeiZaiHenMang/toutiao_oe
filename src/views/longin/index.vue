@@ -74,7 +74,19 @@ export default {
     login () {
       this.$refs.loginform.validate(isOK => {
         if (isOK) {
-          console.log('验证通过')
+          // console.log('验证通过')
+          // 用axios的post接口求到from表单里面的值
+          this.$axios.post('/authorizations', this.fromData).then(result => {
+            // 传入本地localstorage里面,方便后面使用
+            window.localStorage.setItem(
+              // 自定义名字
+              'str-item',
+              // 转换JSON格式
+              JSON.stringify(result.data.data)
+            )
+            // 没毛病后跳转首页
+            this.$router.push('/home')
+          })
         }
       })
     }
