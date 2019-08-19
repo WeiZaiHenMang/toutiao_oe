@@ -2,9 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import ElementUI from 'element-ui'
-import locale from 'element-ui/lib/locale/lang/en'
+import 'element-ui/lib/theme-chalk/index.css'
+import './styles/index.less'
 
-Vue.use(ElementUI, { locale })
+Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
