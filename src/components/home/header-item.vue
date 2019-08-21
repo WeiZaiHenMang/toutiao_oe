@@ -16,16 +16,17 @@
           clearable
         ></el-input>
         <el-badge is-dot>&nbsp;&nbsp;消息</el-badge>
-        <span class="divimg"></span>
-        <el-dropdown trigger="click">
-          <span class="el-dropdown-link" id="xia-la">
-            下拉菜单
+        <span class="divimg">
+          <img :src="useritem.photo?useritem.photo:deitem" alt="">
+          </span>
+        <el-dropdown trigger="click" @command="handleCommand">
+          <span class="el-dropdown-link" id="xia-la">{{useritem.name}}
             <i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>个人信息</el-dropdown-item>
-            <el-dropdown-item>git地址</el-dropdown-item>
-            <el-dropdown-item>退出</el-dropdown-item>
+            <el-dropdown-item  command="peo">个人信息</el-dropdown-item>
+            <el-dropdown-item  command="git">git地址</el-dropdown-item>
+            <el-dropdown-item  command="next">退出</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -34,7 +35,45 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      deitem: require('../../assets/img/avatar.jpg'),
+      useritem: {
+
+      }
+    }
+  },
+  methods: {
+    use () {
+      let jsonitem = window.localStorage.getItem('str-item')
+      let token = jsonitem ? JSON.parse(jsonitem).token : null
+      token && this.$axios({
+        url: '/user/profile',
+        headers: { 'Authorization': `Bearer ${token}` }
+      }).then(result => {
+        if (result.status === 200) {
+          // console.log(result)
+          this.useritem = result.data.data
+        }
+      })
+      // console.log(token)
+    },
+    handleCommand (command) {
+      console.log(command)
+      if (command === 'peo') {
+
+      } else if (command === 'git') {
+      } else {
+        window.localStorage.clear()
+        window.location.href = '/login'
+      }
+    }
+  },
+  created () {
+    this.use()
+  }
+}
 </script>
 
 <style lang = 'less' >
@@ -47,12 +86,14 @@ export default {}
 }
 .divimg {
   display: inline-block;
-  background-image: url("../../assets/img/avatar.jpg");
-  background-size: contain;
+  /* background-image: url("../../assets/img/avatar.jpg");
+  background-size: contain; */
+  transform: translate(10px, 10px);
+  img {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  transform: translate(10px, 10px);
+  }
 }
 #xia-la {
   margin-left: 26px;
