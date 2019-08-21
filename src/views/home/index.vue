@@ -13,7 +13,10 @@
           <headeritem></headeritem>
         </el-header>
         <!-- 内容区 -->
-        <el-main class="main">内容区</el-main>
+        <el-main class="main">
+          内容区
+          <!-- <router-view></router-view> -->
+        </el-main>
       </el-container>
     </el-container>
   </div>

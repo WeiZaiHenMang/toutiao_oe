@@ -62,7 +62,7 @@ export default {
     handleCommand (command) {
       console.log(command)
       if (command === 'peo') {
-
+        window.location.href = '/home/center'
       } else if (command === 'git') {
       } else {
         window.localStorage.clear()

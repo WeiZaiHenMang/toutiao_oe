@@ -11,15 +11,16 @@
       text-color="#adafb5"
       active-text-color="#ffd04b"
       :unique-opened="false"
+      router
     >
-      <el-menu-item index="1-1" class="dh-one">首页</el-menu-item>
+      <el-menu-item class="dh-one" index="/home">首页</el-menu-item>
       <el-submenu index="2">
         <template slot="title">
-          <span style="padding-left: 20px !important; ">内容管理</span>
+          <span style="padding-left: 20px !important">内容管理</span>
         </template>
-        <el-menu-item>发布文章</el-menu-item>
-        <el-menu-item>内容列表</el-menu-item>
-        <el-menu-item>评论列表</el-menu-item>
+        <el-menu-item index="/home/publish">发布文章</el-menu-item>
+        <el-menu-item index="/home/articles">内容列表</el-menu-item>
+        <el-menu-item index="/home/comment">评论列表</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">
@@ -30,7 +31,7 @@
         <el-menu-item>粉丝概况</el-menu-item>
         <el-menu-item>粉丝列表</el-menu-item>
       </el-submenu>
-      <el-menu-item class="dh-one">账户信息</el-menu-item>
+      <el-menu-item class="dh-one" index="/home/center">账户信息</el-menu-item>
     </el-menu>
   </el-aside>
 </template>
