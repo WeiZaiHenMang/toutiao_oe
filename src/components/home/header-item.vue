@@ -45,12 +45,13 @@ export default {
     }
   },
   methods: {
+    // 请求数据
     use () {
-      let jsonitem = window.localStorage.getItem('str-item')
-      let token = jsonitem ? JSON.parse(jsonitem).token : null
-      token && this.$axios({
-        url: '/user/profile',
-        headers: { 'Authorization': `Bearer ${token}` }
+      // let jsonitem = window.localStorage.getItem('str-item')
+      // let token = jsonitem ? JSON.parse(jsonitem).token : null
+      this.$axios({
+        url: '/user/profile'
+        // headers: { 'Authorization': `Bearer ${token}` }
       }).then(result => {
         if (result.status === 200) {
           // console.log(result)
