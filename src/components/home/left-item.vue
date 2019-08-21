@@ -15,7 +15,7 @@
       <el-menu-item index="1-1" class="dh-one">首页</el-menu-item>
       <el-submenu index="2">
         <template slot="title">
-          <span style="padding-left: 20px !important;">内容管理</span>
+          <span style="padding-left: 20px !important; ">内容管理</span>
         </template>
         <el-menu-item>发布文章</el-menu-item>
         <el-menu-item>内容列表</el-menu-item>
@@ -45,11 +45,14 @@ export default {}
   height: 60px;
   padding-top: 10px;
   img {
-    height: 34px;
-    width: 80%;
+    height: 33px;
+    width: 66%;
   }
 }
 .dh-one {
   padding-left: 40px !important;
+}
+.el-menu-item {
+  width: 200px;
 }
 </style>
