@@ -6,7 +6,7 @@
         <span> &nbsp;&nbsp;江苏传智播客教育科技股份有限公司</span>
       </div>
     </el-col>
-    <el-col :span="8">
+    <el-col :span="9">
       <div class="grid-content bg-purple">
         <!-- 搜索框 -->
         <el-input
@@ -53,10 +53,8 @@ export default {
         url: '/user/profile'
         // headers: { 'Authorization': `Bearer ${token}` }
       }).then(result => {
-        if (result.status === 200) {
-          // console.log(result)
-          this.useritem = result.data.data
-        }
+        // console.log(result)
+        this.useritem = result.data
       })
       // console.log(token)
     },

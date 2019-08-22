@@ -82,7 +82,7 @@ export default {
               // 自定义名字
               'str-item',
               // 转换JSON格式
-              JSON.stringify(result.data.data)
+              JSON.stringify(result.data)
             )
             // 没毛病后跳转首页
             this.$router.push('/home')
