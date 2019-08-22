@@ -1,5 +1,9 @@
 import axios from 'axios'
 import { Notification } from 'element-ui'
+import jsonbigint from 'json-bigint'
+axios.defaults.transformResponse = [function (data) {
+  return jsonbigint.parse(data)
+}]
 axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0'
 // 运用axios做拦截器
 // 因为每次接口的调用都需要本地token的判定，所以运用axios的拦截器在每次请求接口前把token值传过去，这样后面接口调用的时候就不需要再次写token判定了

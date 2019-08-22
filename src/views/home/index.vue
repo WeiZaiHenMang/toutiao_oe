@@ -14,8 +14,7 @@
         </el-header>
         <!-- 内容区 -->
         <el-main class="main">
-          内容区
-          <!-- <router-view></router-view> -->
+          <router-view></router-view>
         </el-main>
       </el-container>
     </el-container>
@@ -29,7 +28,7 @@ export default {
 
 <style lang ='less'>
 .letf-box {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #323745;
 }
 .main {

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/home'
 import login from './views/longin'
+import mainitem from './components/home/main-item.vue'
+import pinlun from './components/home/T-pinlun.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -9,7 +11,14 @@ export default new Router({
     { path: '/', name: 'login', component: login },
     {
       path: '/home',
-      component: Home
+      component: Home,
+      children: [{
+        path: '',
+        component: mainitem
+      }, {
+        path: '/home/comment',
+        component: pinlun
+      }]
     }
     // {
     //   path: '/about',
