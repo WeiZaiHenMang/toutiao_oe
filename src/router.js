@@ -18,6 +18,10 @@ export default new Router({
       }, {
         path: '/home/comment',
         component: pinlun
+      }, {
+        path: '/home/material',
+        component: () =>
+                    import('./components/home/T-material .vue')
       }]
     }
     // {
