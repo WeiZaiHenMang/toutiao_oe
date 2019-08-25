@@ -29,14 +29,6 @@
             <span class="el-icon-delete-solid"></span>
           </div>
         </div>
-        <el-row type="flex" justify="center">
-          <el-pagination
-            layout="prev, pager, next"
-            :total="page.total"
-            :current-page="page.currentpage"
-            @current-change="pagechange"
-          ></el-pagination>
-        </el-row>
       </el-row>
     </div>
     <div v-if="!radio">
