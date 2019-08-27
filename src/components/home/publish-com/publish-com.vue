@@ -9,7 +9,7 @@
       <el-tabs type="card">
         <el-tab-pane label="素材库">
           <el-radio-group v-model="butclick" style="margin-bottom: 30px;">
-            <el-radio-button label="全部" name='1'>全部</el-radio-button>
+            <el-radio-button label="全部" name='left'>全部</el-radio-button>
             <el-radio-button label="收藏">收藏</el-radio-button>
           </el-radio-group>
           <!-- 固定高度之外隐藏 -->

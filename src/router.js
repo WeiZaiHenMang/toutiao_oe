@@ -26,6 +26,10 @@ export default new Router({
         path: '/home/publish',
         component: () =>
                     import('./components/home/T-publish.vue')
+      }, {
+        path: '/home/articles',
+        component: () =>
+                    import('./components/home/T-articles.vue')
       }]
     }
     // {

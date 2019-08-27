@@ -99,7 +99,7 @@ export default {
 }
 </script>
 
-<style lang='less' scope>
+<style lang='less' scoped>
 .box-card {
   min-height: 100vh;
   border-radius: 0px;
