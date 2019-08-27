@@ -100,7 +100,7 @@ export default {
             params: { draft },
             data: this.fromdate
           }).then(result => {
-            this.$router.push('/home/material')
+            this.$router.push('/home/articles')
           })
         }
       })
